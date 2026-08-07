@@ -34,7 +34,7 @@ export default function Home() {
       </Button>
       <Button variant="sidebar">
         siderbar
-      </Button>
+      </Button>  
       <Button variant="sidebarOutline">
         sider Outline
       </Button>
