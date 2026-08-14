@@ -4,7 +4,8 @@ import Image from "next/image"
 import { InfinityIcon } from "lucide-react"
 
 type Props = {
-  activeCourse : {imageSrc: string; title:string}; // TODO: Replace with DB types
+  // TODO: Replace with DB types
+  activeCourse : {imageSrc: string; title:string}; 
   hearts: number;
   points: number;
   hasActiveSubscription: boolean;
