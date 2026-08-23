@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Geist_Mono } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs'
-
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const font = Nunito({
@@ -28,9 +28,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className={`${font.variable} ${geistMono.variable} h-full antialiased`}
       >
-        <body className={font.className}>{children}</body>
+        <body className={font.className}>
+          <Toaster />
+          {children}
+          </body>
       </html>
     </ClerkProvider>
   );
