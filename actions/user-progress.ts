@@ -11,7 +11,7 @@ export const upsertUserProgress = async (courseId: number) => {
   const  {userId}  = await auth();
   const user = await currentUser();
 
-  if(!userId || !user) {
+  if(!userId || !user) { 
     throw new Error("Unauthorized");
   }
   const course = await getCourseById(courseId);
@@ -48,7 +48,4 @@ export const upsertUserProgress = async (courseId: number) => {
   revalidatePath("/courses");
   revalidatePath("/learn");
   redirect("/learn")
-
-   
-
 }
