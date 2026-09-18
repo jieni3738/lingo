@@ -3,6 +3,7 @@ import db from "@/db/drizzle";
 import { auth } from "@clerk/nextjs/server";
 import { eq } from "drizzle-orm";
 import { 
+  challengeProgress,
   courses, 
   units, 
   userProgress 
@@ -31,12 +32,15 @@ export const getUserProgress = cache(async () => {
 //                └── Challenges
 //                        └── Challenge Progress
 export const getUnits = cache(async () => {
+
+  // Curly braces {} are used for object destructuring.
+  const { userId } = await auth();
   const userProgress = await getUserProgress();
 
   // ?. is a Optional chaining:
   // If userProgress exists, access activeCourseId.
   // Otherwise, return undefined to avoid an error.
-  if(!userProgress?.activeCourseId) {
+  if(!userId || !userProgress?.activeCourseId) {
     return [];
   }
 
@@ -51,7 +55,11 @@ export const getUnits = cache(async () => {
         with: {
           challenges: {
             with: {
-              challengeProgress: true,
+              challengeProgress: {
+                where: eq(challengeProgress.userId,
+                  userId,
+                ),
+              },
             },
           },
         },
