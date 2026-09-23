@@ -47,9 +47,7 @@ export const Unit = ({
               percentage={activeLessonPercentage}
             />
           )
-
         })}
-
       </div>
     </>
   )
