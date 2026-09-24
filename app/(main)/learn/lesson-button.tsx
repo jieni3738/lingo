@@ -84,15 +84,15 @@ export const LessonButton = ({
             <Button
               size="rounded"
               variant={locked ? "locked" : "secondary"}
-              className="h-[70px] w-[70px] border-b-8"
+              className="h-17.5 w-17.5 border-b-8"
             >
               <Icon
                 className={cn(
-                  "h-10 w-10",
+                  "size-10",
                   locked
                   ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
                   : "fill-primary-foreground text-primary-foreground",
-                  isCompleted && "fill-none stroke-[4]"
+                  isCompleted && "fill-none stroke-4"
                 )}
               />
             </Button>
@@ -102,7 +102,7 @@ export const LessonButton = ({
         <Button
           size="rounded"
           variant={locked ? "locked" : "secondary"}
-          className="h-[70px] w-[70px] border-b-8"
+          className="h-17.5 w-17.5 border-b-8"
         >
           <Icon
             className={cn(
@@ -110,7 +110,7 @@ export const LessonButton = ({
               locked
               ? "fill-neutral-400 text-neutral-400 stroke-neutral-400"
               : "fill-primary-foreground text-primary-foreground",
-              isCompleted && "fill-none stroke-[4]"
+              isCompleted && "fill-none stroke-4"
             )}
           />
         </Button>
