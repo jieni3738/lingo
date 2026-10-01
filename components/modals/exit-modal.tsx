@@ -20,7 +20,10 @@ export const ExitMoDal = () => {
   const [isClient, setIsClient] = useState(false);
   const { isOpen, close } = useExitModal();
 
-  useEffect(() => setIsClient(true), []);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsClient(true);
+  }, []);
 
   if (!isClient) {
     return null;
