@@ -18,12 +18,12 @@ export const Header = ({
   const { open } = useExitModal();
 
   return(
-    <header className="lg:pt-12.5 pt-5 px-10 flex gap-x-7 items-cnter justify-between max-w-285 mx-auto w-full">
+    <header className="lg:pt-12.5 pt-5 px-10 flex gap-x-7 items-center justify-between max-w-285 mx-auto w-full">
       <X 
         onClick={open}
         className="text-slate-500 hover:opacity-75 transition cursor-pointer"
       />
-      <Progress value={percentage}/>
+      <Progress value={percentage} className="flex-1"/>
       <div className="text-rose-500 flex items-center font-bold">
         <Image 
           src="/hearts.svg"
